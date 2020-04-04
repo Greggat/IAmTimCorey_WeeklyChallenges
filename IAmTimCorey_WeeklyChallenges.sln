@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge1_foreach", "Chall
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge2_TextFile", "Challenge2_TextFile\Challenge2_TextFile.csproj", "{E8F410AB-862F-4A71-A460-672DC547C756}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge3_ErrorHandling", "Challenge3_ErrorHandling\Challenge3_ErrorHandling.csproj", "{EF9ABB75-1887-4D79-860D-2BC24E06A289}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E8F410AB-862F-4A71-A460-672DC547C756}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8F410AB-862F-4A71-A460-672DC547C756}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8F410AB-862F-4A71-A460-672DC547C756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF9ABB75-1887-4D79-860D-2BC24E06A289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF9ABB75-1887-4D79-860D-2BC24E06A289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF9ABB75-1887-4D79-860D-2BC24E06A289}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF9ABB75-1887-4D79-860D-2BC24E06A289}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
