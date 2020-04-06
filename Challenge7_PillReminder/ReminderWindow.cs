@@ -13,7 +13,6 @@ namespace PillReminderUI
 {
     public partial class ReminderWindow : Form
     {
-        private BackgroundWorker backgroundWorker;
         BindingList<PillModel> medications = new BindingList<PillModel>();
 
         public ReminderWindow()
@@ -41,7 +40,12 @@ namespace PillReminderUI
         {
             if (InvokeRequired)
             {
-                this?.Invoke(new Action(RefreshPillList), new object[] { });
+                try
+                {
+                    this?.Invoke(new Action(RefreshPillList), new object[] { });
+                }
+                catch { }
+
                 return;
             }
 
@@ -73,8 +77,10 @@ namespace PillReminderUI
         private void takePill_Click(object sender, EventArgs e)
         {
             PillModel pill = pillsToTakeListBox.SelectedItem as PillModel;
-            pill.LastTaken = DateTime.Now;
+            if (pill == null)
+                return;
 
+            pill.LastTaken = DateTime.Now;
             pillsToTakeListBox.Items.RemoveAt(pillsToTakeListBox.SelectedIndex);
         }
     }
