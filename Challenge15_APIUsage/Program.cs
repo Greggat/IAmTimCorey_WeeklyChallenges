@@ -4,6 +4,11 @@ using System.Threading;
 
 namespace Challenge15_APIUsage
 {
+    enum test
+    {
+        a,
+        b
+    }
     class Program
     {
         static void Main(string[] args)
@@ -12,7 +17,7 @@ namespace Challenge15_APIUsage
 
             swapi.GetPeople();
 
-            Console.WriteLine("Hello World!");
+            Console.WriteLine(test.a);
         }
     }
 }

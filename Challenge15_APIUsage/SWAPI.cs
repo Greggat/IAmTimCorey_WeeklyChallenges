@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using Challenge15_APIUsage.Entities;
 using Newtonsoft.Json;
@@ -71,16 +72,21 @@ namespace Challenge15_APIUsage
 
         public List<People> GetPeople()
         {
-            //Need to implement paging...
-            throw new NotImplementedException();
-
+            List<People> people;
 
             string url = $"{_baseUrl}/people";
             string data = GetData(url);
 
-            var people = JsonConvert.DeserializeObject<People[]>(data);
+            var page = JsonConvert.DeserializeObject<Page<People>>(data);
+            people = page.Results;
 
-            for (int i = 1; i <= people.Length; i++)
+            while (page.Next != null)
+            {
+                page = JsonConvert.DeserializeObject<Page<People>>(GetData(page.Next));
+                people = people.Concat(page.Results).ToList();
+            }
+
+            for (int i = 1; i < people.Count; i++)
             {
                 _webCache.Add(
                     new WebCache
